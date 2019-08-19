@@ -1,0 +1,22 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - ./mvnw clean install
+
+script:
+  - docker-compose up -d 
+
+deploy: 
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "microservices-docker"
+  env: "MicroservicesDocker-env"
+  bucket_name: "elasticbeanstalk-us-east-2-830990676668"
+  bucket_path: "microservices-docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
