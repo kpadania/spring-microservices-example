@@ -8,11 +8,7 @@ services:
   - docker
 
 script:
-  - ./mvnw clean install
-
-after_install:
   - docker-compose up -d
-
 
 deploy: 
   provider: elasticbeanstalk
