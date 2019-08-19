@@ -6,11 +6,12 @@ jdk:
 services:
   - docker
 
-before_install:
+script:
   - ./mvnw clean install
 
-script:
-  - docker-compose up -d 
+after_install:
+  - docker-compose up -d
+
 
 deploy: 
   provider: elasticbeanstalk
