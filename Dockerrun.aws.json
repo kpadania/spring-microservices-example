@@ -12,7 +12,7 @@
             "name": "school-ui",
             "image": "kpadania/microservice-docker-school-ui",
             "hostname": "school-ui",
-            "essential": false,
+            "essential": true,
             "memory": 128
         },
         {
