@@ -10,6 +10,17 @@ services:
 script:
   - docker-compose up -d
 
+after_success:
+  - docker build -t kpadania/school-service ./school-service
+  - docker build -t kpadania/school-ui ./school-ui
+  - docker build -t kpadania/config ./config
+  - docker build -t kpadania/discovery ./discovery
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push kpadania/school-service
+  - docker push kpadania/school-ui
+  - docker push kpadania/config
+  - docker push kpadania/discovery
+
 deploy: 
   provider: elasticbeanstalk
   region: "us-east-2"
