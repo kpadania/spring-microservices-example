@@ -3,28 +3,28 @@
     "containerDefinitions": [
         {
             "name": "school-service",
-            "image": "kpadania/microservice-docker-school-service",
+            "image": "kpadania/school-service",
             "hostname": "school-service",
             "essential": false,
             "memory": 128
         },
         {
             "name": "school-ui",
-            "image": "kpadania/microservice-docker-school-ui",
+            "image": "kpadania/school-ui",
             "hostname": "school-ui",
             "essential": true,
             "memory": 128
         },
         {
             "name": "config",
-            "image": "kpadania/microservice-docker-config",
+            "image": "kpadania/config",
             "hostname": "config",
             "essential": false,
             "memory": 128
         },
         {
             "name": "discovery",
-            "image": "kpadania/microservice-docker-discovery",
+            "image": "kpadania/discovery",
             "hostname": "discovery",
             "essential": false,
             "memory": 128
