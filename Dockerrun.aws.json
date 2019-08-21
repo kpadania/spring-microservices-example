@@ -5,29 +5,49 @@
             "name": "school-service",
             "image": "kpadania/school-service",
             "hostname": "school-service",
-            "essential": false,
-            "memory": 128
+            "essential": true,
+            "memory": 128,
+            "command": [
+                "tail",
+                "-f",
+                "/bin/bash"
+            ]
         },
         {
             "name": "school-ui",
             "image": "kpadania/school-ui",
             "hostname": "school-ui",
             "essential": true,
-            "memory": 128
+            "memory": 128,
+            "command": [
+                "tail",
+                "-f",
+                "/bin/bash"
+            ]
         },
         {
             "name": "config",
             "image": "kpadania/config",
             "hostname": "config",
-            "essential": false,
-            "memory": 128
+            "essential": true,
+            "memory": 128,
+            "command": [
+                "tail",
+                "-f",
+                "/bin/bash"
+            ]
         },
         {
             "name": "discovery",
             "image": "kpadania/discovery",
             "hostname": "discovery",
-            "essential": false,
-            "memory": 128
+            "essential": true,
+            "memory": 128,
+            "command": [
+                "tail",
+                "-f",
+                "/bin/bash"
+            ]
         }
     ]
 }
