@@ -6,7 +6,11 @@
             "image": "kpadania/school-service",
             "hostname": "school-service",
             "essential": true,
-            "memory": 128
+            "memory": 128,
+            "links": [
+                "config",
+                "discovery"
+            ]
         },
         {
             "name": "school-ui",
@@ -14,6 +18,10 @@
             "hostname": "school-ui",
             "essential": true,
             "memory": 128,
+            "links": [
+                "config",
+                "discovery"
+            ],
             "portMappings": [
                 {
                     "hostPort": 8080,
@@ -27,6 +35,9 @@
             "hostname": "config",
             "essential": true,
             "memory": 128,
+            "links": [
+                "discovery"
+            ],
             "portMappings": [
                 {
                     "hostPort": 8888,
