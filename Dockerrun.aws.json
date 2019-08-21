@@ -6,12 +6,7 @@
             "image": "kpadania/school-service",
             "hostname": "school-service",
             "essential": true,
-            "memory": 128,
-            "command": [
-                "tail",
-                "-f",
-                "/bin/bash"
-            ]
+            "memory": 128
         },
         {
             "name": "school-ui",
@@ -19,10 +14,11 @@
             "hostname": "school-ui",
             "essential": true,
             "memory": 128,
-            "command": [
-                "tail",
-                "-f",
-                "/bin/bash"
+            "portMappings": [
+                {
+                    "hostPort": 8080,
+                    "containerPort": 8080
+                }
             ]
         },
         {
@@ -31,10 +27,11 @@
             "hostname": "config",
             "essential": true,
             "memory": 128,
-            "command": [
-                "tail",
-                "-f",
-                "/bin/bash"
+            "portMappings": [
+                {
+                    "hostPort": 8888,
+                    "containerPort": 8888
+                }
             ]
         },
         {
@@ -43,10 +40,11 @@
             "hostname": "discovery",
             "essential": true,
             "memory": 128,
-            "command": [
-                "tail",
-                "-f",
-                "/bin/bash"
+            "portMappings": [
+                {
+                    "hostPort": 8761,
+                    "containerPort": 8761
+                }
             ]
         }
     ]
