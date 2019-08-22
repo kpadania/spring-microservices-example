@@ -24,7 +24,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "microservices-docker"
-  env: "MicroservicesDocker-env-1"
+  env: "MicroservicesDocker-env"
   bucket_name: "elasticbeanstalk-us-east-2-830990676668"
   bucket_path: "microservices-docker"
   on:
